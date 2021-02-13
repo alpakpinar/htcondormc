@@ -7,6 +7,15 @@ OUTPATH=${!i}; i=$((i+1))
 
 date
 
+echo "VOMS proxy:"
+voms-proxy-info --all
+echo $X509_USER_PROXY
+
+echo "=================="
+echo "Directory content:"
+ls -lha
+echo "=================="
+
 ############################################
 # ---------------- wmLHEGS-----------------
 ############################################
