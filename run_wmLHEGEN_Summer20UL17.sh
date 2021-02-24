@@ -31,21 +31,21 @@ scram b
 cd ../../
 seed=$(date +%s)
 
-cmsDriver.py Configuration/GenProduction/python/$(basename $FRAGMENT) \ 
---fileout file:wmLHEGEN.root \ 
---mc \ 
---eventcontent RAWSIM,LHE \ 
+cmsDriver.py Configuration/GenProduction/python/$(basename $FRAGMENT) \
+--fileout file:wmLHEGEN.root \
+--mc \
+--eventcontent RAWSIM,LHE \
 --datatier GEN,LHE \
---conditions 106X_mc2017_realistic_v6 \ 
---beamspot Realistic25ns13TeVEarly2017Collision \ 
---step LHE,GEN \ 
+--conditions 106X_mc2017_realistic_v6 \
+--beamspot Realistic25ns13TeVEarly2017Collision \
+--step LHE,GEN \
 --nThreads ${NTHREADS} \
---geometry DB:Extended \ 
---era Run2_2017 \ 
---python_filename wmLHEGEN.py \ 
+--geometry DB:Extended \
+--era Run2_2017 \
+--python_filename wmLHEGEN.py \
 --customise Configuration/DataProcessing/Utils.addMonitoring \
---customise_commands process.source.numberEventsInLuminosityBlock="cms.untracked.uint32(1036)" \ 
---no_exec \ 
+--customise_commands process.source.numberEventsInLuminosityBlock="cms.untracked.uint32(1036)" \
+--no_exec \
 -n ${NEVENTS} || exit $? ;
 
 cmsRun wmLHEGEN.py | tee log_wmLHEGEN.txt
