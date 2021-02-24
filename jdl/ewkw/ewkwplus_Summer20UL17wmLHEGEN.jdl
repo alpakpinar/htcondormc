@@ -1,10 +1,10 @@
 
-njobs = 3
-nevents = 50
+njobs = 200
+nevents = 5000
 ncpus = 4
 memory = 2 GB
 
-tag = ewkwplus_Summer20UL17wmLHEGEN
+tag = ewkwplus_Summer20UL17wmLHEGEN_without_xqcut
 Proxy_filename = x509up_u118821
 Proxy_path = /afs/cern.ch/user/a/aakpinar/private/$(Proxy_filename) 
 environment = "X509_USER_PROXY=$(Proxy_filename)"
