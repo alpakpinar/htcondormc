@@ -1,6 +1,6 @@
 
-njobs = 5
-nevents = 1000
+njobs = 3
+nevents = 50
 ncpus = 4
 memory = 2 GB
 

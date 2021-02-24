@@ -7,7 +7,7 @@ from Configuration.Generator.MCTunes2017.PythiaCP5Settings_cfi import *
 # https://github.com/cms-sw/genproductions/tree/master/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/ewkwplvjj_5f_LO
 
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    args = cms.vstring('/afs/cern.ch/work/a/aakpinar/public/ewk_w_eta_gt_2_6_gridpacks/ewkwplvjj_5f_LO_slc6_amd64_gcc630_CMSSW_9_3_16_tarball.tar.xz'),
+    args = cms.vstring('/afs/cern.ch/work/a/aakpinar/public/ul_ewk_v_gridpacks/ewkwplvjj_5f_LO_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz'),
     nEvents = cms.untracked.uint32(5000),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
