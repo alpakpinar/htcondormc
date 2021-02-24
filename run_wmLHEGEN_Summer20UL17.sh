@@ -1,10 +1,16 @@
 #!/bin/bash
 i=1
-GRIDPACK=${!i}; i=$((i+1))
+# GRIDPACK=${!i}; i=$((i+1))
 FRAGMENT=${!i}; i=$((i+1))
 NEVENTS=${!i}; i=$((i+1))
 NTHREADS=${!i}; i=$((i+1))
 OUTPATH=${!i}; i=$((i+1))
+
+# echo "Gridpack: ${GRIDPACK}"
+echo "Fragment: ${FRAGMENT}"
+echo "Nevents: ${NEVENTS}"
+echo "Nthreads ${NTHREADS}"
+echo "Outpath: ${OUTPATH}"
 
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 if [ -r CMSSW_10_6_18/src ] ; then
@@ -17,7 +23,7 @@ eval `scram runtime -sh`
 
 mkdir -p Configuration/GenProduction/python/
 cp ${FRAGMENT}  Configuration/GenProduction/python/
-sed -i "s/@GRIDPACK/${GRIDPACK}" Configuration/GenProduction/python/$(basename $FRAGMENT)
+# sed -i "s/@GRIDPACK/${GRIDPACK}" Configuration/GenProduction/python/$(basename $FRAGMENT)
 
 [ -s Configuration/GenProduction/python/$(basename $FRAGMENT) ] || exit $?;
 
