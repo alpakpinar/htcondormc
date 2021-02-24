@@ -1,6 +1,6 @@
 
 njobs = 200
-nevents = 5000
+nevents = 10000
 ncpus = 4
 memory = 2 GB
 
