@@ -1,0 +1,32 @@
+
+njobs = 300
+nevents = 10000
+ncpus = 4
+memory = 2 GB
+
+tag = ewkwplus_Summer20UL17wmLHEGEN_with_xqcut_nanogen
+Proxy_filename = x509up_u118821
+Proxy_path = /afs/cern.ch/user/a/aakpinar/private/$(Proxy_filename) 
+environment = "X509_USER_PROXY=$(Proxy_filename)"
+
+home = /afs/cern.ch/work/a/aakpinar/public/htcondormc 
+fragment=$(home)/fragments/ewkw/wplus_cfg.py
+transfer_input_files = $(Proxy_path)
+should_transfer_files = YES
+Executable = $(home)/run_wmLHEGEN_Summer20UL17_NANOGEN.sh
+output = $(home)/logging/$(tag)_$(Cluster).out.$(Process)
+error = $(home)/logging/$(tag)_$(Cluster).err.$(Process)
+log = $(home)/logging/$(tag)_$(Cluster).log.$(Process)
+arguments = $(fragment) $(nevents) $(ncpus) /eos/user/a/aakpinar/mc/$(tag) 
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+Universe = vanilla
+notification = Error
+Initialdir = . 
+getenv = False
+
+request_cpus = $(ncpus)
+request_memory = $(memory)
++MaxRuntime = 86400
+
+queue $(njobs)
