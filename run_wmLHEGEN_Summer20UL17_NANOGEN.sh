@@ -13,12 +13,12 @@ echo "Nthreads ${NTHREADS}"
 echo "Outpath: ${OUTPATH}"
 
 source /cvmfs/cms.cern.ch/cmsset_default.sh
-if [ -r CMSSW_10_6_18/src ] ; then
-  echo release CMSSW_10_6_18 already exists
+if [ -r CMSSW_11_2_0_pre7/src ] ; then
+  echo release CMSSW_11_2_0_pre7 already exists
 else
-  scram p CMSSW CMSSW_10_6_18
+  scram p CMSSW CMSSW_11_2_0_pre7
 fi
-cd CMSSW_10_6_18/src
+cd CMSSW_11_2_0_pre7/src
 eval `scram runtime -sh`
 
 mkdir -p Configuration/GenProduction/python/

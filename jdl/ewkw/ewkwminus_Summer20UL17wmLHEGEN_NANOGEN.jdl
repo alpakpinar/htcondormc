@@ -1,5 +1,5 @@
 
-njobs = 300
+njobs = 400
 nevents = 10000
 ncpus = 4
 memory = 2 GB
