@@ -43,7 +43,7 @@ cmsDriver.py Configuration/GenProduction/python/$(basename $FRAGMENT) \
     --era Run2_2017 \
     --python_filename NANOGEN.py \
     --customise Configuration/DataProcessing/Utils.addMonitoring \
-    --customise_commands process.source.numberEventsInLuminosityBlock="cms.untracked.uint32(1036)" \
+    --customise_commands process.RandomNumberGeneratorService.externalLHEProducer.initialSeed="int(${seed}%100)" \
     -n ${NEVENTS} \
     --no_exec || exit $? ;
 
